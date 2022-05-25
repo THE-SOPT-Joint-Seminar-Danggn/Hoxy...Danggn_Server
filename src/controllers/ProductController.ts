@@ -38,7 +38,7 @@ const updateLike = async (req: Request, res: Response) => {
   const { productId } = req.params;
   try {
     await ProductService.updateLike(productId, productUpdateDto);
-    res.status(statusCode.NO_CONTENT).send();
+    res.status(statusCode.OK).send(util.success(statusCode.OK, message.UPDATE_LIKE_SUCCESS));
   } catch (error) {
     console.log(error);
     res

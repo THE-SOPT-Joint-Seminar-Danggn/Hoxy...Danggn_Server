@@ -1,3 +1,3 @@
-import { ProductCreateDto } from './ProductCreateDto';
+import { ProductCreateDto } from "./ProductCreateDto";
 
 export interface ProductResponseDto extends ProductCreateDto {}

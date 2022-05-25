@@ -20,7 +20,6 @@ const getProduct = async (): Promise<ProductResponseDto[] | null> => {
 const updateLike = async (productId: string, productUpdateDto: ProductUpdateDto) => {
   try {
     const data = await Product.findById(productId, productUpdateDto);
-    console.log(data);
     data.isLiked = !data.isLiked;
     await data.save();
   } catch (error) {
@@ -28,6 +27,7 @@ const updateLike = async (productId: string, productUpdateDto: ProductUpdateDto)
     throw error;
   }
 };
+
 export default {
   getProduct,
   updateLike,

@@ -1,3 +1,4 @@
+import "reflect-metadata"
 import express, { Request, Response, NextFunction } from "express";
 const app = express();
 import connectDB from "./loaders/db";

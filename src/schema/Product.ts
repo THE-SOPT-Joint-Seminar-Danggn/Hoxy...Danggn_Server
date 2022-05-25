@@ -21,6 +21,10 @@ const UserSchema = new mongoose.Schema(
 
 const Product = new mongoose.Schema(
     {
+        images:[{
+            type: String,
+            required: true,
+        }],
         user: {
             type: UserSchema,
             default: {}

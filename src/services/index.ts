@@ -1,4 +1,6 @@
 //service index file
-export {
+import ProductService from "./ProductService";
 
+export {
+    ProductService,
 }

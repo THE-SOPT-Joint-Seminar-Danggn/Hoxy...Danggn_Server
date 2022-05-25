@@ -1,5 +1,5 @@
 import mongoose    from "mongoose";
-import ProductInfo from "../interfaces/ProductInfo";
+import ProductInfo from "../interfaces/product/ProductInfo";
 
 
 const UserSchema = new mongoose.Schema(
@@ -21,6 +21,10 @@ const UserSchema = new mongoose.Schema(
 
 const Product = new mongoose.Schema(
     {
+        images:[{
+            type: String,
+            required: true,
+        }],
         user: {
             type: UserSchema,
             default: {}

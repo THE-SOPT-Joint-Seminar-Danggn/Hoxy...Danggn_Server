@@ -1,6 +1,7 @@
 import UserInfo from "../UserInfo";
 
 export default interface ProductInfo {
+  images: string[],
   user: UserInfo;
   title: string;
   category: string;

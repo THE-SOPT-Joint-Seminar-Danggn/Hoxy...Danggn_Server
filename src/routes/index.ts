@@ -4,7 +4,7 @@ import { ProductController } from "../controllers";
 
 const router = Router();
 
-router.get("/feed", ProductController.getProduct);
+router.get("/feed", ProductController.getAllProducts);
 router.put("/feed/like/:productId", ProductController.updateLike);
 
 export default router;

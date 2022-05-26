@@ -9,13 +9,13 @@ import { ProductUpdateDto } from "../interfaces/product/ProductUpdateDto";
  *  @desc Get All products
  *  @access Public
  */
-const getProduct = async (req: Request, res: Response) => {
+const getAllProducts = async (req: Request, res: Response) => {
   try {
-    const data = await ProductService.getProduct();
+    const data = await ProductService.getAllProducts();
     if (!data) {
       return res
         .status(statusCode.NOT_FOUND)
-        .send(util.fail(statusCode.NOT_FOUND, message.NOT_FOUND));
+        .send({});
     }
     return res
       .status(statusCode.OK)
@@ -48,6 +48,6 @@ const updateLike = async (req: Request, res: Response) => {
 };
 
 export default {
-  getProduct,
+  getAllProducts,
   updateLike,
 };

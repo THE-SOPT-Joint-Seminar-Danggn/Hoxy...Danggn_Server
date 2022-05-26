@@ -1,6 +1,7 @@
 import UserInfo from "../UserInfo";
 
 export interface ProductCreateDto {
+  images: string[],
   user: UserInfo;
   title: string;
   category: string;

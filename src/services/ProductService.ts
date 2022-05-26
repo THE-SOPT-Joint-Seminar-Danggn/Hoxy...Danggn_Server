@@ -4,29 +4,36 @@ import { ProductResponseDto } from "../interfaces/product/ProductResponseDto";
 import { ProductUpdateDto } from "../interfaces/product/ProductUpdateDto";
 
 function timeForToday(value: string) {
+  const ONE_HOUR_UNIT = 60;
+  const ONE_DAY_UNIT = 24;
+  const ONE_YEAR_UNIT = 365;
+  const MILLI_SECOND = 1000;
+
   const today = new Date();
   const timeValue = new Date(value);
 
-  const betweenTime = Math.floor((today.getTime() - timeValue.getTime()) / 1000 / 60);
+  const betweenTime = Math.floor(
+    (today.getTime() - timeValue.getTime()) / MILLI_SECOND / ONE_HOUR_UNIT
+  );
   if (betweenTime < 1) return "방금 전";
-  if (betweenTime < 60) {
+  if (betweenTime < ONE_HOUR_UNIT) {
     return `${betweenTime}분 전`;
   }
 
   const betweenTimeHour = Math.floor(betweenTime / 60);
-  if (betweenTimeHour < 24) {
+  if (betweenTimeHour < ONE_DAY_UNIT) {
     return `${betweenTimeHour}시간 전`;
   }
 
   const betweenTimeDay = Math.floor(betweenTime / 60 / 24);
-  if (betweenTimeDay < 365) {
+  if (betweenTimeDay < ONE_YEAR_UNIT) {
     return `${betweenTimeDay}일 전`;
   }
 
-  return `${Math.floor(betweenTimeDay / 365)}년 전`;
+  return `${Math.floor(betweenTimeDay / ONE_YEAR_UNIT)}년 전`;
 }
 
-const getProduct = async (): Promise<ProductResponseDto[] | null> => {
+const getAllProducts = async (): Promise<ProductResponseDto[] | null> => {
   try {
     const products = await Product.find({}).populate("user");
     const data = await Promise.all(
@@ -61,6 +68,6 @@ const updateLike = async (productId: string, productUpdateDto: ProductUpdateDto)
 };
 
 export default {
-  getProduct,
+  getAllProducts,
   updateLike,
 };

@@ -1,5 +1,5 @@
 import mongoose    from "mongoose";
-import ProductInfo from "../interface/ProductInfo";
+import ProductInfo from "../interfaces/product/ProductInfo";
 
 
 const UserSchema = new mongoose.Schema(

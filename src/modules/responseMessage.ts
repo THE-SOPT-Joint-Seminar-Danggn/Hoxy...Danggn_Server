@@ -4,7 +4,12 @@ const message = {
     BAD_REQUEST: '잘못된 요청',
     INTERNAL_SERVER_ERROR: '서버 내부 오류',
 
-    CREATED_PRODUCT: "상품 등록 성공"
-}
+    CREATED_PRODUCT: "상품 등록 성공",
+    // 상품
+    GET_ALL_PRODUCTS_SUCCESS: "전체 상품 조회 성공",
+
+    //좋아요
+    UPDATE_LIKE_SUCCESS: "좋아요 수정 성공",
+};
 
 export default message;

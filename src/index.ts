@@ -1,8 +1,10 @@
 import "reflect-metadata"
 import express, { Request, Response, NextFunction } from "express";
 const app = express();
-import connectDB from "./loaders/db";
-import routes from './routes';
+import connectDB                                    from "./loaders/db";
+import message                                      from "./modules/responseMessage";
+import routes                                       from './routes';
+import ResponseWrapper                              from "./utils/ResponseWrapper";
 require('dotenv').config();
 
 connectDB();

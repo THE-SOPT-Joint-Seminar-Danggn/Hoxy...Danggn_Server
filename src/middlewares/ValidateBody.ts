@@ -5,7 +5,7 @@ import message                             from "../modules/responseMessage";
 import statusCode                          from "../modules/statusCode";
 import ResponseWrapper                     from "../utils/ResponseWrapper";
 
-export function validateBody(classStruct: { new(...args:any[]): any }) {
+export function validateBody(classStruct: { new(...args: any[]): any }) {
     return async function (req: Request, res: Response, next: NextFunction) {
         const target = plainToInstance(classStruct, req.body);
         try {

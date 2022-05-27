@@ -90,8 +90,8 @@ const getAllProductsWithPagging = async (page: number, limit: number) => {
     try {
         const products = await Product.find()
             .populate("user")
-            .skip(0)
-            .limit(10);
+            .skip(page)
+            .limit(limit);
 
         return products.map(value => {
             return {

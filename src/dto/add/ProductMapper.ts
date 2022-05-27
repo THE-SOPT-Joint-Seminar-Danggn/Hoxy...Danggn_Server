@@ -1,4 +1,4 @@
-import ProductInfo      from "../../interface/ProductInfo";
+import ProductInfo      from "../../interfaces/product/ProductInfo";
 import ImageDataSource  from "../../utils/ImageDataSource";
 import CreateProductDTO from "./CreateProductDTO";
 

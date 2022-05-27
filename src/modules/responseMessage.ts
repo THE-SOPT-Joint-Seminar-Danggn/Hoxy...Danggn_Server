@@ -5,6 +5,7 @@ const message = {
     INTERNAL_SERVER_ERROR: '서버 내부 오류',
 
     CREATED_PRODUCT: "상품 등록 성공",
+    READ_PRODUCT_SUCCESS: "상품 상세 조회 성공",
     // 상품
     GET_ALL_PRODUCTS_SUCCESS: "전체 상품 조회 성공",
 

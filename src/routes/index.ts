@@ -1,3 +1,4 @@
+//router index file
 import { Router }           from 'express';
 import AddProductController from "../controllers/AddProductController";
 import CreateProductDTO     from "../dto/add/CreateProductDTO";
@@ -14,3 +15,4 @@ router.get("/feed_page", ProductController.getAllProductsWithPagging);
 router.put("/feed/like/:productId", ProductController.updateLike);
 router.get('/feed/:productId', DetailController.getDetail);
 
+export default router;

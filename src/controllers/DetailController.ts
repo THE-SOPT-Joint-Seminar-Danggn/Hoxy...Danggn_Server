@@ -13,7 +13,7 @@ import DetailService from "../services/DetailService";
 const getDetail = async (req: Request, res: Response) => {
     const { productId } = req.params;
 
-    /*try{
+    try{
         const data = await DetailService.getDetail(productId);
         if (!data){
             res.status(statusCode.NOT_FOUND).send(util.fail(statusCode.NOT_FOUND, message.NOT_FOUND));
@@ -23,7 +23,7 @@ const getDetail = async (req: Request, res: Response) => {
     } catch (error){
         console.log(error);
         res.status(statusCode.INTERNAL_SERVER_ERROR).send(util.fail(statusCode.INTERNAL_SERVER_ERROR, message.INTERNAL_SERVER_ERROR));
-    }*/
+    }
     
 } 
 

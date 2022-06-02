@@ -14,5 +14,7 @@ router.get("/feed", ProductController.getAllProducts);
 router.get("/feed_page", ProductController.getAllProductsWithPagging);
 router.put("/feed/like/:productId", ProductController.updateLike);
 router.get('/feed/:productId', DetailController.getDetail);
+router.put("/feed/on-sale", DetailController.updateStat);
+
 
 export default router;

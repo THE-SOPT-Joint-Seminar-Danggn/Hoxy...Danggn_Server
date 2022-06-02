@@ -9,6 +9,6 @@ export interface ProductUpdateDto {
   view?: number;
   isPriceSuggestion?: boolean;
   isLiked?: boolean;
-  onSale?: number;
+  onSale?: string;
   createAt?: Date;
 }

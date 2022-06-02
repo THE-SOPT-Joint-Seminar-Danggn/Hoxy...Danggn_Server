@@ -10,6 +10,6 @@ export default interface ProductInfo {
   view: number;
   isPriceSuggestion: boolean;
   isLiked: boolean;
-  onSale: number;
+  onSale: string;
   createAt: Date;
 }

@@ -58,8 +58,8 @@ const Product = new mongoose.Schema(
             default: false
         },
         onSale: {
-            type: Number,
-            default: 0
+            type: String,
+            default: '판매중'
         },
         createAt: {
             type: Date,

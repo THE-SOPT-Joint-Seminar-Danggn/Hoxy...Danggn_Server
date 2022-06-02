@@ -1,5 +1,6 @@
 import express, { Request, Response } from "express";
 import { validationResult } from "express-validator";
+import { DetailResponseDto } from "../interfaces/product/DetailResponseDto";
 import message from "../modules/responseMessage";
 import statusCode from "../modules/statusCode";
 import util from "../modules/util";
@@ -27,7 +28,27 @@ const getDetail = async (req: Request, res: Response) => {
     
 } 
 
+/**
+ * @route PUT /feed/on-sale
+ * @desc Update Sale State
+ * @access Public
+ */
+
+ const updateStat = async (req: Request,res: Response) => {
+    const detailResponseDto: DetailResponseDto = req.body;
+    const { productId } = req.params;
+    try{
+       await DetailService.updateStat(productId, detailResponseDto);
+       res.status(statusCode.OK).send(util.success(statusCode.OK, message.UPDATE_STAT_SUCCESS));
+    } catch (error) {
+        console.log(error);
+        res
+           .status(statusCode.INTERNAL_SERVER_ERROR)
+           .send(util.fail(statusCode.INTERNAL_SERVER_ERROR, message.INTERNAL_SERVER_ERROR));
+    }
+};
 
 export default{
-    getDetail
+   getDetail,
+   updateStat
 }

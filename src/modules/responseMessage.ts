@@ -9,6 +9,12 @@ const message = {
 
   //좋아요
   UPDATE_LIKE_SUCCESS: "좋아요 수정 성공",
+
+   //상품 상세정보 조회
+   READ_PRODUCT_SUCCESS: '상품 상세정보 조회 성공',
+
+   //판매상태 변경
+   UPDATE_STAT_SUCCESS: '판매 상태 변경 성공'
 };
 
 export default message;

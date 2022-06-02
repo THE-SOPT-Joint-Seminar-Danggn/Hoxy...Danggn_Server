@@ -1,4 +1,5 @@
-import { ProductInfo } from "../ProductInfo"
+import ProductInfo from "./ProductInfo";
+
 
 export interface DetailResponseDto {
     onSale: ProductInfo[],

@@ -1,4 +1,5 @@
 import { DetailResponseDto } from "../interface/detail/DetailResponseDto";
+import ProductInfo from "../interfaces/product/ProductInfo";
 import Product from "../schema/Product";
 
 function timeForToday(date: Date) {

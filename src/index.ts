@@ -24,20 +24,18 @@ interface ErrorType {
 
 app.use((req: Request, res: Response, next: NextFunction) => {
     const error: ErrorType = {
-        message: `${req.method} ${req.url} 라우터가 없습니다.`,
+        message: message.BAD_REQUEST,
         status: 404
     }
     next(error);
 });
 
-app.use(function (err: ErrorType, req: Request, res: Response) {
-
+app.use((err: ErrorType, req: Request, res: Response, next: NextFunction) => {
     res.locals.message = err.message;
     res.locals.error = req.app.get("env") === "production" ? err : {};
-
     // render the error page
     res.status(err.status || 500)
-        .send(ResponseWrapper.failureOf(err.status || 500, message.INTERNAL_SERVER_ERROR));
+        .send(ResponseWrapper.failureOf(err.status || 500, err.message || message.INTERNAL_SERVER_ERROR));
 });
 
 app
